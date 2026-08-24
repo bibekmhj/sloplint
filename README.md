@@ -6,16 +6,16 @@
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue)](LICENSE)
 [![CI](https://github.com/bibekmhj/sloplint/actions/workflows/ci.yml/badge.svg)](https://github.com/bibekmhj/sloplint/actions)
 
-**The first AI-slop linter for the JVM.** Every existing "AI-slop detector" is Python or JavaScript. sloplint is built for the Java world — where AI-assisted coding is now colliding with enterprise quality gates.
+**The first AI-slop linter for the JVM.** Every existing "AI-slop detector" is Python or JavaScript. sloplint is built for the Java world - where AI-assisted coding is now colliding with enterprise quality gates.
 
 ## The problem
 
 When an LLM writes your Java code, it leaves a specific set of fingerprints that human review often misses because they don't look wrong at a glance:
 
-- **`YOUR_API_KEY_HERE`** as a string literal — never replaced.
+- **`YOUR_API_KEY_HERE`** as a string literal - never replaced.
 - **`throw new UnsupportedOperationException("TODO")`** in a class that ships.
-- **`catch (Exception e) { e.printStackTrace(); }`** — the error is now invisible.
-- **`@Test void x() { assertTrue(true); }`** — a test that will pass forever, asserting nothing.
+- **`catch (Exception e) { e.printStackTrace(); }`** - the error is now invisible.
+- **`@Test void x() { assertTrue(true); }`** - a test that will pass forever, asserting nothing.
 - **A real GitHub personal access token** pasted into a `String` literal.
 - **`System.out.println("debug")`** left in a `Service` class.
 - **`https://example.com/foo`** as an API base URL.
@@ -75,7 +75,7 @@ src/main/java/example/PaymentService.java:25:9:  WARNING [SL005 silent-catch] ca
 src/main/java/example/PaymentServiceTest.java:8:5: WARNING [SL007 trivial-test] test testCharge() asserts only assertTrue(true)
     | @Test void testCharge()
 
-scanned 12 files in 340ms — 2 errors, 2 warnings
+scanned 12 files in 340ms - 2 errors, 2 warnings
 ```
 
 ## Common integrations
@@ -148,9 +148,9 @@ Kotlin scanning is a v0.2 goal. See [issues](https://github.com/bibekmhj/sloplin
 
 ## Roadmap
 
-- **v0.2** — Maven plugin, Gradle plugin, Kotlin source support, `// sloplint:disable` inline suppression, `.sloplint.toml` config file.
-- **v0.3** — Rules for hallucinated imports (needs classpath resolution), suspiciously generic Javadoc, duplicated boilerplate methods.
-- **v1.0** — Stable rule IDs, semver on the CLI flags, published Maven Central release with GPG signatures.
+- **v0.2** - Maven plugin, Gradle plugin, Kotlin source support, `// sloplint:disable` inline suppression, `.sloplint.toml` config file.
+- **v0.3** - Rules for hallucinated imports (needs classpath resolution), suspiciously generic Javadoc, duplicated boilerplate methods.
+- **v1.0** - Stable rule IDs, semver on the CLI flags, published Maven Central release with GPG signatures.
 
 ## Contributing
 

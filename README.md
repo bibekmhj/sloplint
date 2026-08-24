@@ -127,7 +127,7 @@ options:
 
 ## Why not just add these to SpotBugs / Checkstyle?
 
-You should — and we may ship those integrations later. sloplint exists as a standalone tool because:
+You should - and we may ship those integrations later. sloplint exists as a standalone tool because:
 
 1. **Zero-config.** No project changes, no plugin registration, no dependency graph.
 2. **Runs on any source tree, even without a build.** Great for reviewing an AI-generated PR from someone whose local build you don't have.
